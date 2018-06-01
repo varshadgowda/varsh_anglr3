@@ -1,0 +1,24 @@
+.red{
+	border:solid 1px red;
+}
+h1{
+	text-align: center;	
+}
+#clr{
+	background-color: orange;
+	border-color: orange;
+}
+.btnn{
+	background-color: aquamarine;
+	border-color: aquamarine;
+}
+#btn1{
+	background-color: indianred;
+	border-color:  indianred;
+	margin-left: 18px;
+}
+#btn2{
+	background-color: indianred;
+	border-color:  indianred;
+	margin-left:2px;
+}

@@ -1,0 +1,47 @@
+<div [hidden]="submitted">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <form #detailForm="ngForm" (ngSubmit)="onSubmit(detailForm)">
+          <div class="form-group">
+            <b>Name</b> 
+            <input type="text" name="name" [(ngModel)]="name" #nameRef="ngModel" class="form-control" required
+            [ngClass]="(nameRef.invalid && nameRef.touched) ? 'red' : ''">
+            <p *ngIf="(nameRef.invalid && nameRef.touched)"><b>Name Required</b></p>
+          </div>
+          <div class="form-group">
+            <b>Language</b>
+            <input type="text" name="language" [(ngModel)]="language" #langRef="ngModel" class="form-control" required
+            [ngClass]="(langRef.invalid && langRef.touched) ? 'red' : ''">
+            <p *ngIf="(langRef.invalid && langRef.touched)"><b>language Required</b></p>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="detailForm.invalid">Submit</button>
+          <input class="btn btn-primary" id="clr" type="reset" value="Reset">
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value of values">
+            <td>{{value.name}}</td>
+            <td>{{value.language}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-success"  (click)="router.navigate(['/hero-detail'])" id="btn2">Home</button>
+
+<button type="button" class="btn btn-success" id="btn1">Nextt</button>
